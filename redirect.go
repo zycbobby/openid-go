@@ -22,6 +22,8 @@ func buildRedirectURL(opEndpoint, opLocalID, claimedID, returnTo, realm string) 
 	values.Add("openid.ns", "http://specs.openid.net/auth/2.0")
 	values.Add("openid.mode", "checkid_setup")
 	values.Add("openid.return_to", returnTo)
+	values.Add("openid.ns.sreg", "http://openid.net/extensions/sreg/1.1")
+	values.Add("openid.sreg.required", "nickname,email,fullname")
 
 	if len(claimedID) > 0 {
 		values.Add("openid.claimed_id", claimedID)
